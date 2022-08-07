@@ -12,6 +12,6 @@ func main() {
 	}
 
 	//Create a folder named test with the file main.py in it
-	os.Mkdir("test", 0777)
-	os.Create("test/main.py")
+	os.Mkdir("test python", 0777)
+	os.Create("test python/main.py")
 }
