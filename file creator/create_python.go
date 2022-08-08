@@ -7,7 +7,7 @@ import (
 
 func main() {
 	//Check if the folder test exists, if it does, exit the program
-	if _, err := os.Stat("test"); err == nil {
+	if _, err := os.Stat("test python"); err == nil {
 		os.Exit(1)
 	}
 

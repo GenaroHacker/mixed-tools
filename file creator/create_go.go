@@ -8,7 +8,7 @@ import (
 
 func main() {
 	//Check if the folder test exists, if it does, exit the program
-	if _, err := os.Stat("test"); err == nil {
+	if _, err := os.Stat("test go"); err == nil {
 		os.Exit(1)
 	}
 
@@ -31,4 +31,14 @@ import "fmt"
 func main() {
 	fmt.Println("Hello, 世界")
 }`)
+	//Create a file named build.bat in the folder test that contains the script to compile the program
+	os.Create("test go/build.bat")
+	//Write a script to compile the program to the file build.bat
+	f, err = os.OpenFile("test go/build.bat", os.O_WRONLY, 0666)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	defer f.Close()
+	f.WriteString(`go build main.go`)
 }
