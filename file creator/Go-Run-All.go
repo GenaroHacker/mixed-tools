@@ -23,6 +23,6 @@ func main() {
 			os.Exit(1)
 		}
 		defer f.Close()
-		f.WriteString("go run " + file + "\ntimeout /t 5")
+		f.WriteString("go run " + file + "\ntimeout /t 60")
 	}
 }
