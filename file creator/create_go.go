@@ -1,4 +1,5 @@
-//This file creates a folder named test and creates a file named main.py in that folder
+//This file creates a folder named test and creates a file named main.go in that folder and writes a go hello world program to the file main.go.
+//Then it creates a file named build.bat in the folder test that contains the script to compile the program.
 package main
 
 import (
@@ -22,14 +23,17 @@ func main() {
 		os.Exit(1)
 	}
 	defer f.Close()
-	f.WriteString(`// You can edit this code!
-// Click here and start typing.
+	f.WriteString(`// The file prints "Hello world!" and then waits for 3 seconds.
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("Hello, 世界")
+	fmt.Println("Hello world!")
+	time.Sleep(3 * time.Second)
 }`)
 	//Create a file named build.bat in the folder test that contains the script to compile the program
 	os.Create("test go/build.bat")
