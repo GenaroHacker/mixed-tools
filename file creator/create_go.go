@@ -13,7 +13,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	//Create a folder named test with the file main.py in it
+	//Create a folder named test with the file main.go in it
 	os.Mkdir("test go", 0777)
 	os.Create("test go/main.go")
 	//Write a go hello world program to the file main.go
